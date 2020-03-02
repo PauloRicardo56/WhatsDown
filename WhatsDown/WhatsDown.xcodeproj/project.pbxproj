@@ -16,13 +16,17 @@
 		234F2115240C893F00329EA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234F2113240C893F00329EA5 /* LaunchScreen.storyboard */; };
 		234F2126240C8AFD00329EA5 /* UserInteractorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F211D240C8AFD00329EA5 /* UserInteractorProtocols.swift */; };
 		234F2127240C8AFD00329EA5 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F211E240C8AFD00329EA5 /* UserPresenter.swift */; };
-		234F2128240C8AFD00329EA5 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F211F240C8AFD00329EA5 /* UserRouter.swift */; };
 		234F2129240C8AFD00329EA5 /* UserViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2120240C8AFD00329EA5 /* UserViewControllerProtocol.swift */; };
 		234F212A240C8AFD00329EA5 /* UserPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2121240C8AFD00329EA5 /* UserPresenterProtocol.swift */; };
 		234F212B240C8AFD00329EA5 /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2122240C8AFD00329EA5 /* UserModels.swift */; };
 		234F212C240C8AFD00329EA5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2123240C8AFD00329EA5 /* UserViewController.swift */; };
 		234F212D240C8AFD00329EA5 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2124240C8AFD00329EA5 /* UserInteractor.swift */; };
-		234F212E240C8AFD00329EA5 /* UserRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2125240C8AFD00329EA5 /* UserRouterProtocol.swift */; };
+		234F213F240C957E00329EA5 /* UserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2134240C957E00329EA5 /* UserCoordinator.swift */; };
+		234F2142240C957E00329EA5 /* UserCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2137240C957E00329EA5 /* UserCoordinatorProtocol.swift */; };
+		234F2143240C957E00329EA5 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2138240C957E00329EA5 /* UserRouter.swift */; };
+		234F2149240C957E00329EA5 /* UserRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F213E240C957E00329EA5 /* UserRouterProtocol.swift */; };
+		234F214B240C978C00329EA5 /* SingInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F214A240C978C00329EA5 /* SingInViewController.swift */; };
+		234F214D240C99C300329EA5 /* UserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F214C240C99C300329EA5 /* UserWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,13 +40,17 @@
 		234F2116240C893F00329EA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		234F211D240C8AFD00329EA5 /* UserInteractorProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractorProtocols.swift; sourceTree = "<group>"; };
 		234F211E240C8AFD00329EA5 /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
-		234F211F240C8AFD00329EA5 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		234F2120240C8AFD00329EA5 /* UserViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerProtocol.swift; sourceTree = "<group>"; };
 		234F2121240C8AFD00329EA5 /* UserPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenterProtocol.swift; sourceTree = "<group>"; };
 		234F2122240C8AFD00329EA5 /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
 		234F2123240C8AFD00329EA5 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		234F2124240C8AFD00329EA5 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
-		234F2125240C8AFD00329EA5 /* UserRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouterProtocol.swift; sourceTree = "<group>"; };
+		234F2134240C957E00329EA5 /* UserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoordinator.swift; sourceTree = "<group>"; };
+		234F2137240C957E00329EA5 /* UserCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		234F2138240C957E00329EA5 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		234F213E240C957E00329EA5 /* UserRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouterProtocol.swift; sourceTree = "<group>"; };
+		234F214A240C978C00329EA5 /* SingInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInViewController.swift; sourceTree = "<group>"; };
+		234F214C240C99C300329EA5 /* UserWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWorker.swift; sourceTree = "<group>"; };
 		707CC5668962225C00B61B3C /* Pods-WhatsDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsDown.release.xcconfig"; path = "Target Support Files/Pods-WhatsDown/Pods-WhatsDown.release.xcconfig"; sourceTree = "<group>"; };
 		CA4B1915369D76BAB4B3D597 /* libPods-WhatsDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhatsDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C7B4B12C39E637093FDB56 /* Pods-WhatsDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsDown.debug.xcconfig"; path = "Target Support Files/Pods-WhatsDown/Pods-WhatsDown.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +126,7 @@
 				234F2130240C8B1600329EA5 /* Presenter */,
 				234F212F240C8B0400329EA5 /* Interactor */,
 				234F2122240C8AFD00329EA5 /* UserModels.swift */,
+				234F214C240C99C300329EA5 /* UserWorker.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -145,6 +154,7 @@
 			children = (
 				234F2123240C8AFD00329EA5 /* UserViewController.swift */,
 				234F2120240C8AFD00329EA5 /* UserViewControllerProtocol.swift */,
+				234F214A240C978C00329EA5 /* SingInViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,8 +162,10 @@
 		234F2132240C8B3100329EA5 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				234F211F240C8AFD00329EA5 /* UserRouter.swift */,
-				234F2125240C8AFD00329EA5 /* UserRouterProtocol.swift */,
+				234F2134240C957E00329EA5 /* UserCoordinator.swift */,
+				234F2137240C957E00329EA5 /* UserCoordinatorProtocol.swift */,
+				234F2138240C957E00329EA5 /* UserRouter.swift */,
+				234F213E240C957E00329EA5 /* UserRouterProtocol.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -258,13 +270,17 @@
 				234F210D240C893C00329EA5 /* ViewController.swift in Sources */,
 				234F212C240C8AFD00329EA5 /* UserViewController.swift in Sources */,
 				234F212D240C8AFD00329EA5 /* UserInteractor.swift in Sources */,
-				234F2128240C8AFD00329EA5 /* UserRouter.swift in Sources */,
 				234F2109240C893C00329EA5 /* AppDelegate.swift in Sources */,
+				234F214D240C99C300329EA5 /* UserWorker.swift in Sources */,
+				234F213F240C957E00329EA5 /* UserCoordinator.swift in Sources */,
 				234F210B240C893C00329EA5 /* SceneDelegate.swift in Sources */,
+				234F214B240C978C00329EA5 /* SingInViewController.swift in Sources */,
 				234F2127240C8AFD00329EA5 /* UserPresenter.swift in Sources */,
+				234F2149240C957E00329EA5 /* UserRouterProtocol.swift in Sources */,
 				234F2129240C8AFD00329EA5 /* UserViewControllerProtocol.swift in Sources */,
 				234F2126240C8AFD00329EA5 /* UserInteractorProtocols.swift in Sources */,
-				234F212E240C8AFD00329EA5 /* UserRouterProtocol.swift in Sources */,
+				234F2142240C957E00329EA5 /* UserCoordinatorProtocol.swift in Sources */,
+				234F2143240C957E00329EA5 /* UserRouter.swift in Sources */,
 				234F212B240C8AFD00329EA5 /* UserModels.swift in Sources */,
 				234F212A240C8AFD00329EA5 /* UserPresenterProtocol.swift in Sources */,
 			);

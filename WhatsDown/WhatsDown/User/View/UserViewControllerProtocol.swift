@@ -15,4 +15,6 @@ protocol UserViewControllerProtocol: class {
     /// Atualizamos a UI com o valor retornado.
     /// - Parameter object: Objeto - EntityView - que será mostrado na UI. Deve já vir preparado do Presenter para a visualização
     func set(viewModel: UserDetails.User.UserViewModel)
+    
+    func displayAlert(_ alert: UIAlertController)
 }

@@ -16,7 +16,8 @@ class UserViewController: UIViewController {
     var object: UserDetails.User.UserViewModel?
     
     //MARK: - Outles:
-    
+    @IBOutlet var email: UITextField!
+    @IBOutlet var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +33,12 @@ class UserViewController: UIViewController {
         
         let interactor = UserInteractor()
         let presenter = UserPresenter()
-        let router = UserRouter()
+        let router = UserRouter(navigationController: self.navigationController!)
         
         self.interactor = interactor
         self.router = router
         
         presenter.viewController = self
-        router.viewController = self
         router.dataStore = interactor
     }
     
@@ -50,11 +50,22 @@ class UserViewController: UIViewController {
     
     
     //MARK: - Actions:
+    @IBAction func login(_ sender: Any) {
+    }
     
+    
+    @IBAction func signIn(_ sender: Any) {
+    }
 }
 
 // MARK: - implementing UserViewProtocol
 extension UserViewController: UserViewControllerProtocol {
+    
+    func displayAlert(_ alert: UIAlertController) {
+        
+        self.present(alert, animated: true)
+    }
+    
     
     func set(viewModel: UserDetails.User.UserViewModel) {
         

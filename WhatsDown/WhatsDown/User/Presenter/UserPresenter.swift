@@ -17,6 +17,15 @@ class UserPresenter {
 // MARK: - extending UserPresenter to implement it's protocol
 extension UserPresenter: UserPresenterProtocol {
     
+    func signInError(error: Error) {
+        
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        viewController!.displayAlert(alert)
+    }
+    
+    
     func present(didFetch response: UserDetails.User.UserResponse) {
         
         //Transformamos o Response em um ViewModel e chamamos a View:

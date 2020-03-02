@@ -13,7 +13,7 @@ enum UserDetails {
     
     enum User {
         
-        /// Parâmetros necessários para fazer a reques na API
+        /// Parâmetros necessários para fazer a request na API
         struct UserRequest {
             
         }
@@ -29,6 +29,12 @@ enum UserDetails {
         /// retorna objetos com 10 parâmetros e só precisamos mostrar 4.
         struct UserViewModel {
             
+        }
+        
+        
+        struct UserLogin {
+            var email: String
+            var password: String
         }
     }
 }

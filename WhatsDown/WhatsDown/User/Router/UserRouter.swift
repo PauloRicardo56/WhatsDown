@@ -9,31 +9,30 @@
 import UIKit
 
 /// User Module Router (aka: Wireframe)
-class UserRouter: NSObject, UserRouterProtocol, UserDataPassing {
+class UserRouter: UserRouterProtocol, UserDataPassing {
     
-    var viewController: UserViewController?
+    var navigationController: UINavigationController
     var dataStore: UserDataStore?
     
-    
-    func routeToSomewhere() {
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-//        let destinationDS = destinationVC.router!.dataStore!
-//        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//        navigateToSomewhere(source: viewController, destination: destinationVC)
-        
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
     
     
-    // MARK: - Navigation
-//    func navigateToSomewhere(source: UserViewController, destination: SomewhereViewController) {
-//        //source.show(destination)
-//    }
-//    
-//    // MARK: - Pass Data
-//    func passDataToSomewhere(source: UserViewController, destination: inout SomewhereViewController) {
-//        //source.name = destination.name
-//        //source.age = destination.age
-//    }
+    // Aqui implementaremos as funções de showModule/showView, exemplo:
+    // func presentViewController1(object: SomeObject, vcToShow: Vc) {
+    //    // No caso dessa vc precisaremos passar dados para ela,
+    //    // por isso o parâmetro object.
+    //    vcToShow.name = object.name
+    //    vcToShow.year = object.year
+    //    navigationController.pushViewController(vcToShow, animated: true)
+    
+    func routeToSomewhere() {
+        //
+    }
+    
+    // MARK: - Transferência de dados
+    func transferData() {
+        
+    }
 }
