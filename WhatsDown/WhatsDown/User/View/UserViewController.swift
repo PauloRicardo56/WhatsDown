@@ -12,7 +12,8 @@ import UIKit
 class UserViewController: UIViewController {
     
     var interactor: UserInteractorProtocol?
-    var router: (UserRouterProtocol & UserDataPassing)?
+//    var router: (UserRouterProtocol & UserDataPassing)?
+    var coordinator: UserCoordinatorProtocol?
     var object: UserDetails.User.UserViewModel?
     
     //MARK: - Outles:
@@ -25,20 +26,18 @@ class UserViewController: UIViewController {
         setup()
         
         // Informs the Presenter that the View is ready to receive data.
-        //interactor?.fetch(request: <#UserDetails.User.UserRequest#>)
+        
     }
     
     
     func setup() {
         
-        let interactor = UserInteractor()
-        let presenter = UserPresenter()
+        let interactor = UserInteractor(presenterView: self)
         let router = UserRouter(navigationController: self.navigationController!)
         
         self.interactor = interactor
-        self.router = router
+        self.coordinator = UserCoordinator(router: router, view: self)
         
-        presenter.viewController = self
         router.dataStore = interactor
     }
     
@@ -51,10 +50,17 @@ class UserViewController: UIViewController {
     
     //MARK: - Actions:
     @IBAction func login(_ sender: Any) {
+        
+        if !email.text!.isEmpty && !password.text!.isEmpty {
+            let user = UserDetails.User.UserLogin(email: email.text!, password: password.text!)
+            interactor?.login(login: user)
+        }
     }
     
     
-    @IBAction func signIn(_ sender: Any) {
+    @IBAction func signUpView(_ sender: Any) {
+        
+        coordinator?.present(vcName: ViewsNames.signIn)
     }
 }
 
@@ -64,6 +70,15 @@ extension UserViewController: UserViewControllerProtocol {
     func displayAlert(_ alert: UIAlertController) {
         
         self.present(alert, animated: true)
+    }
+    
+    
+    func displayLoginErrorAlert(_ alert: UIAlertController) {
+        
+        alert.addAction(UIAlertAction(title: "Sign in", style: .default, handler: { _ in
+            self.coordinator?.present(vcName: ViewsNames.signIn)
+        }))
+        self.displayAlert(alert)
     }
     
     

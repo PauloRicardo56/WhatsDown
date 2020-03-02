@@ -38,9 +38,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvX-gm-K3H">
                                 <rect key="frame" x="127" y="652" width="161" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign in"/>
+                                <state key="normal" title="Sign up"/>
                                 <connections>
-                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LdS-H0-2rR"/>
+                                    <action selector="signUpView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="19M-dW-1Sz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
         </scene>
-        <!--Sing In View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="SY1-oX-s1Z">
             <objects>
-                <viewController id="npW-F4-7Ez" customClass="SingInViewController" customModule="WhatsDown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signIn" id="npW-F4-7Ez" customClass="SignUpViewController" customModule="WhatsDown" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ULu-R7-eCh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,9 +80,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnD-sM-Zcz">
                                 <rect key="frame" x="127" y="650" width="161" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign in"/>
+                                <state key="normal" title="Sign up"/>
                                 <connections>
-                                    <action selector="SignIn:" destination="npW-F4-7Ez" eventType="touchUpInside" id="ZaQ-My-1yy"/>
+                                    <action selector="signUp:" destination="npW-F4-7Ez" eventType="touchUpInside" id="yjY-XZ-LeE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,8 +90,8 @@
                         <viewLayoutGuide key="safeArea" id="cce-9r-vLM"/>
                     </view>
                     <connections>
-                        <outlet property="email" destination="EVI-XV-lw6" id="8Ws-W2-Zhn"/>
-                        <outlet property="password" destination="ny2-TS-o0i" id="TdD-tq-UWM"/>
+                        <outlet property="email" destination="EVI-XV-lw6" id="uNO-TU-ugX"/>
+                        <outlet property="password" destination="ny2-TS-o0i" id="w1M-E0-gd7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFy-jN-MM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

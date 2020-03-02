@@ -17,12 +17,31 @@ class UserPresenter {
 // MARK: - extending UserPresenter to implement it's protocol
 extension UserPresenter: UserPresenterProtocol {
     
-    func signInError(error: Error) {
+    func alertError(error: Error) {
         
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         
         viewController!.displayAlert(alert)
+    }
+    
+    
+    func alertLoginError(error: Error) {
+        
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        viewController?.displayLoginErrorAlert(alert)
+    }
+    
+    func alertLoginSuccess() {
+        
+        let alert = UIAlertController(title: "Login", message: "Account created!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            //TODO: Route to messages
+        }))
+        
+        viewController?.displayAlert(alert)
     }
     
     

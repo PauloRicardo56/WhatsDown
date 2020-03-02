@@ -20,9 +20,13 @@ protocol UserInteractorProtocol {
     /// Suppose we have a database to store the incoming object from presenter.
     /// - Parameter object: Objeto - EntityData - que será armazenado no banco.
     //func store(objectToStore object: UserEntity.UserData)
+    
+    func signUp(login: UserDetails.User.UserLogin)
+    
+    func login(login: UserDetails.User.UserLogin)
 }
 
 
 protocol UserDataStore {
-    
+    var email: String? { get set }
 }

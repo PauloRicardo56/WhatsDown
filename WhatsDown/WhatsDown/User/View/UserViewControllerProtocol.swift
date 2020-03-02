@@ -17,4 +17,6 @@ protocol UserViewControllerProtocol: class {
     func set(viewModel: UserDetails.User.UserViewModel)
     
     func displayAlert(_ alert: UIAlertController)
+    
+    func displayLoginErrorAlert(_ alert: UIAlertController)
 }

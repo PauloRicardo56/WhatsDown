@@ -15,12 +15,14 @@ class UserWorker {
     
     let auth = Auth.auth()
     
-    func signIn(login: UserDetails.User.UserLogin) {
+    func signUp(login: UserDetails.User.UserLogin, completion: AuthDataResultCallback?) {
         
         auth.createUser(withEmail: login.email, password: login.password) { (user, error) in
-            //TODO: Create error handling with UIAlertController
-            if error != nil {
+            if let error = error {
+                completion?(user, error)
+            } else {
                 self.auth.signIn(withEmail: login.email, password: login.password)
+                completion?(user, nil)
             }
         }
     }
@@ -30,10 +32,14 @@ class UserWorker {
         
         auth.signIn(withEmail: login.email, password: login.password) { (user, error) in
             completion?(user, error)
-//            if let error = error, user == nil {
-//                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: .default))
-//            }
+        }
+    }
+    
+    
+    func changeAuthState() {
+        auth.addStateDidChangeListener { (auth, user) in
+            //TODO: Route to messages
+            print(1111)
         }
     }
 }

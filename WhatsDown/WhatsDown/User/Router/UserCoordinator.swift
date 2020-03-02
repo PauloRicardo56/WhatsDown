@@ -12,13 +12,12 @@ import UIKit
 class UserCoordinator: UserCoordinatorProtocol {
     
     var router: UserRouter!
+//    var viewControllers: [String : UIViewController] = [ViewsNames. : SignUpViewController()]
+    weak var view: UserViewController?
     
-    /// Instanciamos todas as viewControllers do fluxo da mainCoordinator,
-    /// e identificamos cada uma com o nome de suas respectivas classes.
-    var viewControllers = [String:UIViewController]()
-    
-    init(router: UserRouter) {
+    init(router: UserRouter, view: UserViewController) {
         self.router = router
+        self.view = view
     }
     
     
@@ -32,17 +31,18 @@ class UserCoordinator: UserCoordinatorProtocol {
     }
     
     
-    func present(viewControllerName: String) {
+    func present(vcName: ViewsNames) {
+        
+        guard let view = self.view?.storyboard?.instantiateViewController(withIdentifier: vcName.rawValue) as? SignUpViewController else { return }
+        view.interactor = self.view?.interactor as? (NSObjectProtocol & UserDataStore & UserInteractorProtocol)
+        router.routeToSignUp(vc: view, email: self.view!.email.text!)
         
         //guard let view = viewControllers[viewControllerName]
         /// O papel do Coordinator é apenas instanciar as views e saber quando irá mostrá-las,
         /// se quisermos passar dados de uma view para outra fazemos isso no Router. Aqui
-        /// poderiamos ter um switch para determinar qual viewController iá aprecer de acordo
-        /// com a viewControllerName, daí chamríamos o método do router para essa view,
-        /// nesse método é onde passaríamos os dados. Exemplo:
-        /// switch (viewControllerName) {
-        ///     case viewController1:
-        ///         router.presentViewController1(object: SomeObjectType, vcToShow: view)
-        /// ...
+        /// determinamos qual viewController iá aprecer de acordo com a viewControllerName,
+        /// daí chamaríamos o método do router para essa view, método é onde passaríamos
+        /// os dados. Exemplo:
+        /// router.presentViewController1(object: SomeObjectType, vcToShow: view)
     }
 }

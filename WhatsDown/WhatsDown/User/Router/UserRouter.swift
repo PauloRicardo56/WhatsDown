@@ -27,12 +27,15 @@ class UserRouter: UserRouterProtocol, UserDataPassing {
     //    vcToShow.year = object.year
     //    navigationController.pushViewController(vcToShow, animated: true)
     
-    func routeToSomewhere() {
-        //
+    func routeToSignUp(vc: SignUpViewController, email: String) {
+        
+        transferData(email: email)
+        navigationController.show(vc, sender: nil)
     }
     
+    
     // MARK: - Transferência de dados
-    func transferData() {
-        
+    func transferData(email: String) {
+        dataStore?.email = email
     }
 }

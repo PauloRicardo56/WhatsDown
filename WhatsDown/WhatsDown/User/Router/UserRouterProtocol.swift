@@ -21,6 +21,7 @@ protocol UserRouterProtocol {
     // para cada module disponível para ir.
     //func routeToSomewhereElse()
     // ...
+    func routeToSignUp(vc: SignUpViewController, email: String)
 }
 
 

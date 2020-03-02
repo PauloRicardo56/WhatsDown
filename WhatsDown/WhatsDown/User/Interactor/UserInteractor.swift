@@ -11,10 +11,18 @@ import Firebase
 
 
 /// User Module Interactor
-class UserInteractor: UserInteractorProtocol {
+class UserInteractor: UserInteractorProtocol, UserDataStore {
     
     let presenter = UserPresenter()
     let worker = UserWorker()
+    
+    // MARK: - DataStore
+    var email: String?
+    
+    init(presenterView: UserViewControllerProtocol) {
+        presenter.viewController = presenterView
+        worker.changeAuthState()
+    }
 
     
     func fetch(request: UserDetails.User.UserRequest) {
@@ -26,16 +34,21 @@ class UserInteractor: UserInteractorProtocol {
     }
     
     
-    func signIn(login: UserDetails.User.UserLogin) {
-        
-        worker.signIn(login: login)
+    func signUp(login: UserDetails.User.UserLogin) {
+        worker.signUp(login: login) { (user, error) in
+            if let error = error {
+                self.presenter.alertError(error: error)
+            } else {
+                self.presenter.alertLoginSuccess()
+            }
+        }
     }
     
     
     func login(login: UserDetails.User.UserLogin) {
         worker.login(login: login) { (user, error) in
             if let error = error, user == nil {
-                self.presenter.signInError(error: error)
+                self.presenter.alertLoginError(error: error)
             }
         }
     }
@@ -47,9 +60,4 @@ class UserInteractor: UserInteractorProtocol {
 }
 
 
-// MARK: - DataStore
-extension UserInteractor: UserDataStore {
-    
-    //var name: String
-    //var age: Int
-}
+

@@ -17,7 +17,7 @@ protocol UserCoordinatorProtocol: AnyObject {
     
     /// Instanciamos todas as viewControllers do fluxo da mainCoordinator,
     /// e identificamos cada uma com o nome de suas respectivas classes.
-    var viewControllers: [String : UIViewController] { get set }
+//    var viewControllers: [String : UIViewController] { get set }
     
     /// Aqui podemos ter vários diferentes coordinators, cada um com um fluxo de view's
     /// diferentes, como linear ou nominal(dependendo da ação, uma view diferente aprecerá).
@@ -29,5 +29,5 @@ protocol UserCoordinatorProtocol: AnyObject {
     
     /// Parecido, mas não igual, ao start().
     /// Chamado pela Presenter (VIPER)/ViewModel (MVVM)
-    func present(viewControllerName: String)
+    func present(vcName: ViewsNames)
 }

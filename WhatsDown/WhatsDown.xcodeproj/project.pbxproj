@@ -25,8 +25,10 @@
 		234F2142240C957E00329EA5 /* UserCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2137240C957E00329EA5 /* UserCoordinatorProtocol.swift */; };
 		234F2143240C957E00329EA5 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2138240C957E00329EA5 /* UserRouter.swift */; };
 		234F2149240C957E00329EA5 /* UserRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F213E240C957E00329EA5 /* UserRouterProtocol.swift */; };
-		234F214B240C978C00329EA5 /* SingInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F214A240C978C00329EA5 /* SingInViewController.swift */; };
 		234F214D240C99C300329EA5 /* UserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F214C240C99C300329EA5 /* UserWorker.swift */; };
+		234F2150240D0C4D00329EA5 /* ViewsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F214F240D0C4D00329EA5 /* ViewsNames.swift */; };
+		234F2152240D0F1E00329EA5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F2151240D0F1E00329EA5 /* SignUpViewController.swift */; };
+		234F2154240D15D900329EA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 234F2153240D15D900329EA5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,8 +51,10 @@
 		234F2137240C957E00329EA5 /* UserCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		234F2138240C957E00329EA5 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		234F213E240C957E00329EA5 /* UserRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouterProtocol.swift; sourceTree = "<group>"; };
-		234F214A240C978C00329EA5 /* SingInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInViewController.swift; sourceTree = "<group>"; };
 		234F214C240C99C300329EA5 /* UserWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWorker.swift; sourceTree = "<group>"; };
+		234F214F240D0C4D00329EA5 /* ViewsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsNames.swift; sourceTree = "<group>"; };
+		234F2151240D0F1E00329EA5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		234F2153240D15D900329EA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		707CC5668962225C00B61B3C /* Pods-WhatsDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsDown.release.xcconfig"; path = "Target Support Files/Pods-WhatsDown/Pods-WhatsDown.release.xcconfig"; sourceTree = "<group>"; };
 		CA4B1915369D76BAB4B3D597 /* libPods-WhatsDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhatsDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C7B4B12C39E637093FDB56 /* Pods-WhatsDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsDown.debug.xcconfig"; path = "Target Support Files/Pods-WhatsDown/Pods-WhatsDown.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 		234F2107240C893C00329EA5 /* WhatsDown */ = {
 			isa = PBXGroup;
 			children = (
+				234F214E240D0C3B00329EA5 /* Constants */,
 				234F211C240C8AE400329EA5 /* User */,
 				234F210E240C893C00329EA5 /* Main.storyboard */,
 				234F2108240C893C00329EA5 /* AppDelegate.swift */,
@@ -114,6 +119,7 @@
 				234F2111240C893F00329EA5 /* Assets.xcassets */,
 				234F2113240C893F00329EA5 /* LaunchScreen.storyboard */,
 				234F2116240C893F00329EA5 /* Info.plist */,
+				234F2153240D15D900329EA5 /* GoogleService-Info.plist */,
 			);
 			path = WhatsDown;
 			sourceTree = "<group>";
@@ -153,8 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				234F2123240C8AFD00329EA5 /* UserViewController.swift */,
+				234F2151240D0F1E00329EA5 /* SignUpViewController.swift */,
 				234F2120240C8AFD00329EA5 /* UserViewControllerProtocol.swift */,
-				234F214A240C978C00329EA5 /* SingInViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +174,14 @@
 				234F213E240C957E00329EA5 /* UserRouterProtocol.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		234F214E240D0C3B00329EA5 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				234F214F240D0C4D00329EA5 /* ViewsNames.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +246,7 @@
 				234F2115240C893F00329EA5 /* LaunchScreen.storyboard in Resources */,
 				234F2112240C893F00329EA5 /* Assets.xcassets in Resources */,
 				234F2110240C893C00329EA5 /* Main.storyboard in Resources */,
+				234F2154240D15D900329EA5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +287,10 @@
 				234F212D240C8AFD00329EA5 /* UserInteractor.swift in Sources */,
 				234F2109240C893C00329EA5 /* AppDelegate.swift in Sources */,
 				234F214D240C99C300329EA5 /* UserWorker.swift in Sources */,
+				234F2152240D0F1E00329EA5 /* SignUpViewController.swift in Sources */,
+				234F2150240D0C4D00329EA5 /* ViewsNames.swift in Sources */,
 				234F213F240C957E00329EA5 /* UserCoordinator.swift in Sources */,
 				234F210B240C893C00329EA5 /* SceneDelegate.swift in Sources */,
-				234F214B240C978C00329EA5 /* SingInViewController.swift in Sources */,
 				234F2127240C8AFD00329EA5 /* UserPresenter.swift in Sources */,
 				234F2149240C957E00329EA5 /* UserRouterProtocol.swift in Sources */,
 				234F2129240C8AFD00329EA5 /* UserViewControllerProtocol.swift in Sources */,
