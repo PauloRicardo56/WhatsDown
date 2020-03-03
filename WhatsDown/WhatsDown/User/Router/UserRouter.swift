@@ -13,29 +13,33 @@ class UserRouter: UserRouterProtocol, UserDataPassing {
     
     var navigationController: UINavigationController
     var dataStore: UserDataStore?
+    var msgDataStore: MessagesDataStore?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     
-    // Aqui implementaremos as funções de showModule/showView, exemplo:
-    // func presentViewController1(object: SomeObject, vcToShow: Vc) {
-    //    // No caso dessa vc precisaremos passar dados para ela,
-    //    // por isso o parâmetro object.
-    //    vcToShow.name = object.name
-    //    vcToShow.year = object.year
-    //    navigationController.pushViewController(vcToShow, animated: true)
-    
+    //MARK: - Route to View's
     func routeToSignUp(vc: SignUpViewController, email: String) {
-        
-        transferData(email: email)
+        signInTransferData(email: email)
         navigationController.show(vc, sender: nil)
     }
     
     
-    // MARK: - Transferência de dados
-    func transferData(email: String) {
+    func routeToMessages(vc: MessagesViewController) {
+        msgTransferData(sourceDS: msgDataStore!, destinationDS: &vc.coordinator!.router.dataStore!)
+        navigationController.show(vc, sender: nil)
+    }
+    
+    
+    // MARK: - Data transfer
+    func signInTransferData(email: String) {
         dataStore?.email = email
+    }
+    
+    
+    func msgTransferData(sourceDS: MessagesDataStore, destinationDS: inout MessagesDataStore) {
+        destinationDS.usrName = sourceDS.usrName
     }
 }

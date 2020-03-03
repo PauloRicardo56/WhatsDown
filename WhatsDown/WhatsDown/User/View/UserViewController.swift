@@ -39,12 +39,7 @@ class UserViewController: UIViewController {
         self.coordinator = UserCoordinator(router: router, view: self)
         
         router.dataStore = interactor
-    }
-    
-    
-    func fetch() {
-        let request = UserDetails.User.UserRequest()
-        interactor?.fetch(request: request)
+        router.msgDataStore = interactor
     }
     
     
@@ -60,7 +55,7 @@ class UserViewController: UIViewController {
     
     @IBAction func signUpView(_ sender: Any) {
         
-        coordinator?.present(vcName: ViewsNames.signIn)
+        coordinator?.presentSignUp()
     }
 }
 
@@ -68,7 +63,6 @@ class UserViewController: UIViewController {
 extension UserViewController: UserViewControllerProtocol {
     
     func displayAlert(_ alert: UIAlertController) {
-        
         self.present(alert, animated: true)
     }
     
@@ -76,9 +70,14 @@ extension UserViewController: UserViewControllerProtocol {
     func displayLoginErrorAlert(_ alert: UIAlertController) {
         
         alert.addAction(UIAlertAction(title: "Sign in", style: .default, handler: { _ in
-            self.coordinator?.present(vcName: ViewsNames.signIn)
+            self.coordinator?.presentSignUp()
         }))
         self.displayAlert(alert)
+    }
+    
+    
+    func presentMessages() {
+        coordinator?.presentMessengers()
     }
     
     

@@ -22,6 +22,8 @@ protocol UserRouterProtocol {
     //func routeToSomewhereElse()
     // ...
     func routeToSignUp(vc: SignUpViewController, email: String)
+    
+    func routeToMessages(vc: MessagesViewController)
 }
 
 

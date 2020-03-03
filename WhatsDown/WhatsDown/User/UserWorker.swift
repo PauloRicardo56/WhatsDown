@@ -36,10 +36,10 @@ class UserWorker {
     }
     
     
-    func changeAuthState() {
+    func changeAuthState(completion: AuthStateDidChangeListenerBlock?) {
         auth.addStateDidChangeListener { (auth, user) in
             //TODO: Route to messages
-            print(1111)
+            completion?(auth, user)
         }
     }
 }

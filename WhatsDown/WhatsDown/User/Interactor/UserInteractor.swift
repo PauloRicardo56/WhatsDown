@@ -11,17 +11,21 @@ import Firebase
 
 
 /// User Module Interactor
-class UserInteractor: UserInteractorProtocol, UserDataStore {
+class UserInteractor: UserInteractorProtocol, UserDataStore, MessagesDataStore {
     
     let presenter = UserPresenter()
     let worker = UserWorker()
     
-    // MARK: - DataStore
+    // MARK: - DataStore's
     var email: String?
+    var usrName: String?
     
     init(presenterView: UserViewControllerProtocol) {
         presenter.viewController = presenterView
-        worker.changeAuthState()
+        worker.changeAuthState { (auth, user) in
+            self.usrName = user?.email
+            self.presenter.viewController?.presentMessages()
+        }
     }
 
     
@@ -39,7 +43,8 @@ class UserInteractor: UserInteractorProtocol, UserDataStore {
             if let error = error {
                 self.presenter.alertError(error: error)
             } else {
-                self.presenter.alertLoginSuccess()
+//                self.usrName = user?.user.email
+//                self.presenter.alertLoginSuccess()
             }
         }
     }
@@ -49,6 +54,9 @@ class UserInteractor: UserInteractorProtocol, UserDataStore {
         worker.login(login: login) { (user, error) in
             if let error = error, user == nil {
                 self.presenter.alertLoginError(error: error)
+            } else {
+                //TODO: Route to messages view.
+                self.usrName = user?.user.email
             }
         }
     }
@@ -58,6 +66,3 @@ class UserInteractor: UserInteractorProtocol, UserDataStore {
         
     //}
 }
-
-
-

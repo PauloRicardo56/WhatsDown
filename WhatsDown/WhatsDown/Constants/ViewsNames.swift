@@ -10,4 +10,5 @@ import Foundation
 
 enum ViewsNames: String {
     case signIn
+    case messages
 }
